@@ -192,6 +192,14 @@ class Diary:
         #   they have available given their reading speed.
         pass
 
+    def get_diary_contacts(self):
+        # Parameters:
+        #   None
+        # Returns:
+        #   A list of all contacts associated with a diary entry
+        pass
+
+
 class DiaryEntry:
     # Public Properties:
     #   title: a string
@@ -390,8 +398,8 @@ Given a ToDo with two added contacts
 Calling get_contacts returns a list of phone numbers
 """
 todo1 = ToDo("Wash the dishes")
-contact1 = Contact(07123456789)
-contact2 = Contact(07987654321)
+contact1 = Contact("07123456789")
+contact2 = Contact("07987654321")
 todo1.add_contact(contact1)
 todo1.add_contact(contact2)
 todo1.get_contacts() => [contact1, contact2]
@@ -451,8 +459,8 @@ mitch.find_best_entry_for_reading_time(4) =>
 Given a contact list with two added contacts
 all_contacts returns a list of added contact objects
 """
-contact1 = Contact(07111111111)
-contact2 = Contact(07111111112)
+contact1 = Contact("07111111111")
+contact2 = Contact("07111111112")
 contactlist1 = ContactList()
 contactlist1.add(contact1)
 contactlist1.add(contact2)
@@ -484,12 +492,12 @@ todo1 = ToDo("Wash the dishes")
 todo2 = ToDo("Mow the lawn")
 entry1.add_todo(todo1)
 entry1.add_todo(todo2)
-contact1 = Contact(07111111111)
-contact2 = Contact(07111111112)
+contact1 = Contact("07111111111")
+contact2 = Contact("07111111112")
 todo1.add_contact(contact1)
 todo1.add_contact(contact2)
-contact3 = Contact(07111111113)
-contact4 = Contact(07111111114)
+contact3 = Contact("07111111113")
+contact4 = Contact("07111111114")
 todo1.add_contact(contact3)
 todo1.add_contact(contact4)
 entry1.get_contacts(0) => [contact1, contact2, contact3, contact4]
@@ -534,7 +542,7 @@ entry.diaryentry_contacts => []
 entry.diaryentry_tasks => []
 
 """
-Given a diary entry with a title and contacts
+Given a diary entry with no added contacts
 Calling get_contacts
 Returns an empty list
 """
@@ -674,8 +682,8 @@ mylist.all_todos => []
 Given a contact with a number
 The number is associated with the number property
 """
-contact1 = Contact(07111111111)
-contact1.phone => 07111111111
+contact1 = Contact("07111111111")
+contact1.phone => "07111111111"
 
 # class Contact List Unit Tests
 """
